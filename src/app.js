@@ -1,11 +1,22 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let pronoun = ["the", "our"];
+let adj = ["great", "big"];
+let noun = ["jogger", "racoon"];
+let extension = [".com", ".net", ".io"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function generarCorreos(pronoun, adj, noun, extension) {
+  let correos = [];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  for (let palabra1 of pronoun) {
+    for (let palabra2 of adj) {
+      for (let palabra3 of noun) {
+        for (let palabra4 of extension)
+          correos.push(`${palabra1}${palabra2}${palabra3}@dominio${palabra4}`);
+      }
+    }
+  }
+
+  return correos;
+}
+
+const todosLosCorreos = generarCorreos(pronoun, adj, noun, extension);
+console.log(todosLosCorreos);
